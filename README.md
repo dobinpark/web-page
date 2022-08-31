@@ -6,14 +6,14 @@
 
 ### 사용 기술
 
-#### Back-End
+#### -Back-End-
 
 SpringBoot, Hibernate(JPA), Lombok
 
-#### Front-End
+#### -Front-End-
 
 Thymeleaf, Bootstrap
 
-#### DB
+#### -DB-
 
 MySQL
