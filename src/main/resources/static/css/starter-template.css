@@ -1,0 +1,12 @@
+body {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+#color {
+    word-spacing : 10px;
+}

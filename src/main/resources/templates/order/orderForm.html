@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+    <div class="container">
+
+        <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+        <form role="form" action="/order" th:object="${form}" method="post">
+            <div class="form-group">
+                <label for="member">주문회원</label>
+                <select name="memberId" id="member" class="form-control">
+                    <option value="">회원선택</option>
+                    <option th:each="member : ${members}"
+                            th:value="${member.id}"
+                            th:text="${member.name}" />
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="item">상품명</label>
+                <select name="itemId" id="item" class="form-control">
+                    <option value="">상품선택</option>
+                    <option th:each="item : ${items}"
+                            th:value="${item.id}"
+                            th:text="${item.name}" />
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="count">주문수량</label>
+                <input type="number" name="count" class="form-control" id="count"
+                       placeholder="주문 수량을 입력하세요">
+            </div>
+
+            <div class="form-group" id="color">
+                <p>
+                    <label th:for="color">색상</label><br>
+                    화이트 : <input type="radio" th:field="*{color}" th:value="white"> /
+                    블랙 : <input type="radio" th:field="*{color}" th:value="black"> /
+                    그레이 : <input type="radio" th:field="*{color}" th:value="gray"> /
+                    네이비 : <input type="radio" th:field="*{color}" th:value="navy">
+                </p>
+            </div>
+
+            <div class="form-group" id="size">
+                <p>
+                    <label th:for="size">사이즈</label><br>
+                    90  :  <input type="radio" th:field="*{size}" th:value="90">  /
+                    95  :  <input type="radio" th:field="*{size}" th:value="95">  /
+                    100  :  <input type="radio" th:field="*{size}" th:value="100">  /
+                    105  :  <input type="radio" th:field="*{size}" th:value="105">  /
+                    110  :  <input type="radio" th:field="*{size}" th:value="110">
+                </p>
+            </div>
+
+            <button type="submit" class="btn btn-primary">완료</button>
+        </form>
+        <br/>
+
+        <div th:replace="fragments/footer :: footer" />
+    </div> <!-- /container -->
+</body>
+</html>
